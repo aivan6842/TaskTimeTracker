@@ -1,0 +1,52 @@
+{% block content %}
+
+<h1>Tasks</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Task Name</th>
+      <th scope="col">Task Description</th>
+      <th scope="col">Time Worked On</th>
+      <th scope="col">Currently Working</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  {% if userTasks %}
+      {% for task in userTasks %}
+         <tbody>
+            <tr class="table-dark">
+               <td style='text-align:center'>{{ task.taskName }}</td>
+               <td style='text-align:center'>{{ task.description }}</td>
+               <td style='text-align:center'>{{ task.totaltime }}</td>
+               <td style='text-align:center'>{{ task.currentlyWorking }}</td>
+               <td style='text-align:center'>
+                  {% if not task.currentlyWorking %}
+                  <form  method="post"> {% csrf_token %}
+                     <button type="submit" name="{{task.taskName}}Start" formmethod='post' value='True'>Start Working</button>
+                  </form>
+                  {% else %}
+                  <form  method="post"> {% csrf_token %}
+                     <button type="submit" name="{{task.taskName}}Stop" formmethod='post' value='True'>Stop Working</button>
+                  </form>
+                  {% endif %}
+               </td>
+               <td style='text-align:center'>
+                 <form method='post'> {% csrf_token %}
+                   <button type='submit' name='{{task.taskName}}Delete' formmethod="post" value=True>Delete Task</button>
+                 </form>
+               </td>
+            </tr>
+         </tbody>
+      {% endfor %}
+  {% else %}
+     <h2>No Tasks Yet</h2>
+  {% endif %}
+</table>
+
+<form  method="post"> {% csrf_token %}
+   <button type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sign Up Page</h1>
+
+<form class="SignUp" method="post"> {% csrf_token %}
+   <label for="username"><b>Choose Your Username:</b></label>
+   <input type="text" placeholder="Enter Username" name="username" required><br>
+
+   <label for="password"><b>Choose Your Password</b></label>
+   <input type="password" placeholder="Enter Password" name="password" required><br>
+
+   {% if BadUser %}
+      <p style="color:red">User Name already registered</p><br>
+   {% endif %}
+
+   <input type="submit"></input>
+</form>
+
+<form class="SignIn" method="post">{% csrf_token %}
+   <input type='submit' name='signIn' value="Sign In"></input>
+</form>
+{% endblock %}

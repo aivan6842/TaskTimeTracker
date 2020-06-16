@@ -1,0 +1,24 @@
+{% block content %}
+
+<h1>Create Tasks</h1>
+
+
+<form  method="post"> {% csrf_token %}
+   <label for="taskName"><b>Task Name</b></label>
+   <input type="text" placeholder="Enter Task Name" name="taskName" required>
+
+   <br><br>
+
+   <label for="description"><b>Description</b></label>
+   <textarea name="description" placeholder="Description"></textarea>
+
+   <br><br>
+
+   {% if BadTaskName %}
+      <p style="color:red">This task already exists!</p><br>
+   {% endif %}
+
+   <button type="submit" formmethod="post">Create New Task</button>
+</form>
+
+{% endblock %}
