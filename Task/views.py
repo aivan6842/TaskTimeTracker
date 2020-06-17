@@ -11,7 +11,6 @@ def home(request):
 
 def signIn(request):
     if request.method == 'POST':
-        print(request.POST)
         if request.POST.get('signUp'):
             return redirect('/signUp/')
 
