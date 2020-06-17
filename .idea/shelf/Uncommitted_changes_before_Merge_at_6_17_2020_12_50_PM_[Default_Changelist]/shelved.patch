@@ -1,0 +1,42 @@
+Index: Task/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render, redirect\r\nfrom django.http.response import HttpResponse\r\nfrom .forms import UserForm, TaskForm\r\nfrom .models import User, Task\r\nfrom django.utils import timezone\r\n\r\n# Create your views here.\r\n\r\ndef home(request):\r\n    if request.method == 'GET':\r\n        return render(request, 'homePage.html')\r\n    elif request.POST.get('signInButton'):\r\n        return redirect('/signIn/')\r\n    elif request.POST.get('signUpButton'):\r\n        return redirect('/signUp/')\r\n    return render(request, 'homePage.html')\r\n\r\ndef signIn(request):\r\n    if request.method == 'POST':\r\n        print(request.POST)\r\n        if request.POST.get('signUp'):\r\n            return redirect('/signUp/')\r\n\r\n        username = request.POST['username']\r\n        password = request.POST['password']\r\n        userExists = User.objects.filter(username=username, password=password).exists()\r\n\r\n        if userExists:\r\n            user = User.objects.get(username=username, password=password)\r\n            return redirect(f'/viewTasks/{user.id}/')\r\n\r\n        return render(request, 'signIn.html', {'BadUser': True})\r\n    else:\r\n        return render(request, 'signIn.html', {'BadUser': False})\r\n\r\n\r\ndef signUp(request):\r\n    if request.method == 'POST':\r\n        if request.POST.get('signIn'):\r\n            return redirect('/signIn/')\r\n        username = request.POST['username']\r\n        usernameExists = User.objects.filter(username=username).exists()\r\n        if not usernameExists:\r\n            form = UserForm(request.POST)\r\n            if form.is_valid():\r\n                form.save()\r\n                currUser = User.objects.get(username=request.POST['username'], password=request.POST['password'])\r\n                return redirect(f'/viewTasks/{currUser.id}/')\r\n        return render(request, 'signUp.html', {'BadUser':True})\r\n    else:\r\n        return render(request, 'signUp.html', {'BadUser': False})\r\n\r\ndef viewTasks(request, id):\r\n    allTasks = Task.objects.filter(userReference__id=id)\r\n    if request.method == 'GET':\r\n        return render(request, 'viewTasks.html', {'userTasks': allTasks })\r\n    else:\r\n        if request.POST.get('createTask'):\r\n            return redirect(f'/createTask/{id}/')\r\n        else:\r\n            for task in allTasks:\r\n                if request.POST.get(f'{task.taskName}Start'):\r\n                    currTask = Task.objects.get(id=task.id)\r\n                    currTask.currentlyWorking = True\r\n                    currTask.startedAt = timezone.now()\r\n                    currTask.save()\r\n                    break\r\n                elif request.POST.get(f'{task.taskName}Stop'):\r\n                    currTask = Task.objects.get(id=task.id)\r\n                    currTask.currentlyWorking = False\r\n                    currTask.totaltime += timezone.now() - currTask.startedAt\r\n                    currTask.save()\r\n                    break\r\n                elif request.POST.get(f'{task.taskName}Delete'):\r\n                    currTask = Task.objects.get(id=task.id)\r\n                    currTask.delete()\r\n            allTasks = Task.objects.filter(userReference__id=id)\r\n            return render(request, 'viewTasks.html', {'userTasks': allTasks})\r\n\r\ndef createTask(request, id):\r\n    if request.method == 'GET':\r\n        return render(request, 'createTask.html', {'BadTaskName': False})\r\n    else:\r\n        form = TaskForm(request.POST)\r\n        if form.is_valid():\r\n            currForm = form.save(commit=False)\r\n            taskNameExists = Task.objects.filter(taskName=currForm.taskName).exists()\r\n            if taskNameExists:\r\n                return render(request, 'createTask.html', {'BadTaskName': True})\r\n            userRef = User.objects.get(id=id)\r\n            currForm.userReference = userRef\r\n            currForm.save()\r\n            return redirect(f'/viewTasks/{id}/')\r\n        else:\r\n            return HttpResponse('Invalid Form')\r\n        return render(request, 'createTask.html')\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Task/views.py	(revision dc618c0270fa92d3a45e3c13e09e46eadc5c80e9)
++++ Task/views.py	(date 1592412565148)
+@@ -15,6 +15,7 @@
+         return redirect('/signUp/')
+     return render(request, 'homePage.html')
+ 
++
+ def signIn(request):
+     if request.method == 'POST':
+         print(request.POST)
+@@ -35,8 +36,11 @@
+ 
+ 
+ def signUp(request):
++    print('x')
++    print(request.POST.get('signIn'))
+     if request.method == 'POST':
+         if request.POST.get('signIn'):
++            print('x')
+             return redirect('/signIn/')
+         username = request.POST['username']
+         usernameExists = User.objects.filter(username=username).exists()
+@@ -46,10 +50,11 @@
+                 form.save()
+                 currUser = User.objects.get(username=request.POST['username'], password=request.POST['password'])
+                 return redirect(f'/viewTasks/{currUser.id}/')
+-        return render(request, 'signUp.html', {'BadUser':True})
++        return render(request, 'signUp.html', {'BadUser': True})
+     else:
+         return render(request, 'signUp.html', {'BadUser': False})
+ 
++
+ def viewTasks(request, id):
+     allTasks = Task.objects.filter(userReference__id=id)
+     if request.method == 'GET':
