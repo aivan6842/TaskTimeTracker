@@ -15,6 +15,7 @@ def home(request):
         return redirect('/signUp/')
     return render(request, 'homePage.html')
 
+
 def signIn(request):
     if request.method == 'POST':
         print(request.POST)
@@ -35,8 +36,11 @@ def signIn(request):
 
 
 def signUp(request):
+    print('x')
+    print(request.POST.get('signIn'))
     if request.method == 'POST':
         if request.POST.get('signIn'):
+            print('x')
             return redirect('/signIn/')
         username = request.POST['username']
         usernameExists = User.objects.filter(username=username).exists()
@@ -46,9 +50,10 @@ def signUp(request):
                 form.save()
                 currUser = User.objects.get(username=request.POST['username'], password=request.POST['password'])
                 return redirect(f'/viewTasks/{currUser.id}/')
-        return render(request, 'signUp.html', {'BadUser':True})
+        return render(request, 'signUp.html', {'BadUser': True})
     else:
         return render(request, 'signUp.html', {'BadUser': False})
+
 
 def viewTasks(request, id):
     allTasks = Task.objects.filter(userReference__id=id)
