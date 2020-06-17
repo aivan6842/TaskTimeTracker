@@ -1,30 +1,23 @@
 {% extends 'base.html' %}
+
 {% block content %}
-{% load static %}
+<h1>Sign Up Page</h1>
 
-<link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
-<div class="container">
-        <div class="row justify-content-center align-items-center" style="height:100vh">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <form method='POST'>{% csrf_token %}
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="username" placeholder="Username" class="signForm">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password" class="signForm">
-                            </div>
-							<button type='submit' name='signIn' class="btn btn-primary" value="true">Back</button>
-							<button type='submit' name='signUp' class="btn btn-primary" id="signUp" value="true">Submit</button>
-                              {% if BadUser %}
-                                 <p class="invalidUser">User not recognized</p>
-                              {% endif %}
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<form class="SignUp" method="post"> {% csrf_token %}
+   <label for="username"><b>Choose Your Username:</b></label>
+   <input type="text" placeholder="Enter Username" name="username" required><br>
 
-{% endblock content %}
+   <label for="password"><b>Choose Your Password</b></label>
+   <input type="password" placeholder="Enter Password" name="password" required><br>
+
+   {% if BadUser %}
+      <p style="color:red">User Name already registered</p><br>
+   {% endif %}
+
+   <input type="submit"></input>
+</form>
+
+<form class="SignIn" method="post">{% csrf_token %}
+   <input type='submit' name='signIn' value="Sign In"></input>
+</form>
+{% endblock %}
