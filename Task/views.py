@@ -7,13 +7,7 @@ from django.utils import timezone
 # Create your views here.
 
 def home(request):
-    if request.method == 'GET':
-        return render(request, 'homePage.html')
-    elif request.POST.get('signInButton'):
-        return redirect('/signIn/')
-    elif request.POST.get('signUpButton'):
-        return redirect('/signUp/')
-    return render(request, 'homePage.html')
+    return redirect('/signIn/')
 
 def signIn(request):
     if request.method == 'POST':
