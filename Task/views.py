@@ -36,12 +36,9 @@ def signIn(request):
 
 
 def signUp(request):
-    print('x')
-    print(request.POST.get('signIn'))
     if request.method == 'POST':
         if request.POST.get('signIn'):
-            print('x')
-            return redirect('/signIn/')
+            return redirect('')
         username = request.POST['username']
         usernameExists = User.objects.filter(username=username).exists()
         if not usernameExists:
