@@ -17,14 +17,18 @@ def home(request):
 
 def signIn(request):
     if request.method == 'POST':
+        print(request.POST)
         if request.POST.get('signUp'):
             return redirect('/signUp/')
+
         username = request.POST['username']
         password = request.POST['password']
         userExists = User.objects.filter(username=username, password=password).exists()
+
         if userExists:
             user = User.objects.get(username=username, password=password)
             return redirect(f'/viewTasks/{user.id}/')
+
         return render(request, 'signIn.html', {'BadUser': True})
     else:
         return render(request, 'signIn.html', {'BadUser': False})

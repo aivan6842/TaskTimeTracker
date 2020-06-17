@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<h1>Sign In Page</h1>
+{% load static %}
 
-<form class="SignIn" method="post"> {% csrf_token %}
-   <label for="username"><b>Username</b></label>
-   <input type="text" placeholder="Enter Username" name="username" required><br>
+<link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
+<div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form method='POST'>{% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username" class="signForm">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password" class="signForm">
+                            </div>
+<!--                            <button type="button" id="sendlogin" class="btn btn-primary">login</button>-->
+							<button type='submit' name='signIn'
+                                    class="btn btn-primary">Sign in</button>
 
-   <label for="password"><b>Password</b></label>
-   <input type="password" placeholder="Enter Password" name="password" required><br>
+							<button type='submit' name='signUp'
+                                    class="btn btn-primary" id="signUp" value="true">Sign up</button>
+                              {% if BadUser %}
+                                 <p class="invalidUser">User not recognized</p>
+                              {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-   {% if BadUser %}
-      <p style="color:red">User Name is not registered</p><br>
-   {% endif %}
+{% endblock content %}
 
-   <input type="submit" name='signIn'></input>
-</form>
-
-<form class="SignUp" method="post">{% csrf_token %}
-   <input type='submit' name='signUp' value="Sign Up"></input>
-</form>
-{% endblock %}
