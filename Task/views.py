@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
 from .forms import UserForm, TaskForm
 from .models import User, Task
-import datetime
+from django.utils import timezone
 
 # Create your views here.
 
@@ -58,13 +58,13 @@ def viewTasks(request, id):
                 if request.POST.get(f'{task.taskName}Start'):
                     currTask = Task.objects.get(id=task.id)
                     currTask.currentlyWorking = True
-                    #currTask.startedAt = datetime.datetime.now()
+                    currTask.startedAt = timezone.now()
                     currTask.save()
                     break
                 elif request.POST.get(f'{task.taskName}Stop'):
                     currTask = Task.objects.get(id=task.id)
                     currTask.currentlyWorking = False
-                    #currTask.totaltime = datetime.datetime.now() - currTask.startedAt
+                    currTask.totaltime += timezone.now() - currTask.startedAt
                     currTask.save()
                     break
                 elif request.POST.get(f'{task.taskName}Delete'):

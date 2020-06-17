@@ -1,19 +1,21 @@
+{% extends 'base.html' %}
+
 {% block content %}
 
 <h1>Tasks</h1>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Task Name</th>
-      <th scope="col">Task Description</th>
-      <th scope="col">Time Worked On</th>
-      <th scope="col">Currently Working</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  {% if userTasks %}
+{% if userTasks %}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Task Name</th>
+        <th scope="col">Task Description</th>
+        <th scope="col">Time Worked On</th>
+        <th scope="col">Currently Working</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
       {% for task in userTasks %}
          <tbody>
             <tr class="table-dark">

@@ -1,5 +1,5 @@
 from django.db import models
-import datetime
+from django.utils import timezone
 # Create your models here.
 
 class User(models.Model):
@@ -10,6 +10,6 @@ class Task(models.Model):
     taskName = models.TextField(default=None)
     description = models.TextField(default=None)
     currentlyWorking = models.BooleanField(default=False)
-    totaltime = models.DurationField(default=datetime.timedelta)
+    totaltime = models.DurationField(default=timezone.timedelta)
     startedAt = models.DateTimeField(auto_now_add=True)
     userReference = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
