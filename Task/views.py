@@ -32,7 +32,7 @@ def signIn(request):
 def signUp(request):
     if request.method == 'POST':
         if request.POST.get('signIn'):
-            return redirect('')
+            return redirect('/signIn/')
         username = request.POST['username']
         usernameExists = User.objects.filter(username=username).exists()
         if not usernameExists:
