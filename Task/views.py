@@ -31,14 +31,17 @@ def signUp(request):
     if request.method == 'POST':
         if request.POST.get('signIn'):
             return redirect('/signIn/')
+
         username = request.POST['username']
         usernameExists = User.objects.filter(username=username).exists()
+
         if not usernameExists:
             form = UserForm(request.POST)
             if form.is_valid():
                 form.save()
                 currUser = User.objects.get(username=request.POST['username'], password=request.POST['password'])
                 return redirect(f'/viewTasks/{currUser.id}/')
+
         return render(request, 'signUp.html', {'BadUser':True})
     else:
         return render(request, 'signUp.html', {'BadUser': False})
