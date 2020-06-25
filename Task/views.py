@@ -53,6 +53,8 @@ def viewTasks(request, id):
     else:
         if request.POST.get('createTask'):
             return redirect(f'/createTask/{id}/')
+        elif request.POST.get('signOut'):
+            return redirect(f'/signIn/')
         else:
             for task in allTasks:
                 if request.POST.get(f'{task.taskName}Start'):
