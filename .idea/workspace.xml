@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="Added css to viewTasks.html">
+    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="added viewtaks javascript">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/taskapp.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/taskapp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/viewTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/viewTasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/viewTasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewTasks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,11 +131,19 @@
       <option name="project" value="LOCAL" />
       <updated>1593097022761</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added viewtaks javascript">
+      <created>1593103583062</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593103583062</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -152,7 +161,8 @@
     <MESSAGE value="Added front end sign in page got rid of home page" />
     <MESSAGE value="Sign up html" />
     <MESSAGE value="Added css to viewTasks.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added css to viewTasks.html" />
+    <MESSAGE value="added viewtaks javascript" />
+    <option name="LAST_COMMIT_MESSAGE" value="added viewtaks javascript" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593092667294">
@@ -167,22 +177,22 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="621" y="309" key="Github.CreatePullRequestDialog/0.0.1866.933@0.0.1866.933" timestamp="1592400670667" />
-    <state width="1845" height="152" key="GridCell.Tab.0.bottom" timestamp="1593097197787">
+    <state width="1258" height="215" key="GridCell.Tab.0.bottom" timestamp="1593105840659">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1845" height="152" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
-    <state width="1845" height="152" key="GridCell.Tab.0.center" timestamp="1593097197787">
+    <state width="1258" height="215" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1593105840659" />
+    <state width="1258" height="215" key="GridCell.Tab.0.center" timestamp="1593105840658">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1845" height="152" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
-    <state width="1845" height="152" key="GridCell.Tab.0.left" timestamp="1593097197787">
+    <state width="1258" height="215" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1593105840658" />
+    <state width="1258" height="215" key="GridCell.Tab.0.left" timestamp="1593105840658">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1845" height="152" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
-    <state width="1845" height="152" key="GridCell.Tab.0.right" timestamp="1593097197787">
+    <state width="1258" height="215" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1593105840658" />
+    <state width="1258" height="215" key="GridCell.Tab.0.right" timestamp="1593105840658">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1845" height="152" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
+    <state width="1258" height="215" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1593105840658" />
     <state width="1451" height="285" key="GridCell.Tab.1.bottom" timestamp="1592404851141">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
@@ -219,14 +229,14 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="714" y="183" key="VCS.ChangeListViewerDialog/0.0.1866.933@0.0.1866.933" timestamp="1592412569498" />
-    <state x="340" y="183" key="Vcs.Push.Dialog.v2" timestamp="1593097029123">
+    <state x="340" y="183" key="Vcs.Push.Dialog.v2" timestamp="1593103607118">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state x="340" y="183" key="Vcs.Push.Dialog.v2/0.0.1866.933@0.0.1866.933" timestamp="1593097029123" />
-    <state x="695" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592412560178">
+    <state x="340" y="183" key="Vcs.Push.Dialog.v2/0.0.1866.933@0.0.1866.933" timestamp="1593103607118" />
+    <state x="695" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593103416991">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state x="695" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1866.933@0.0.1866.933" timestamp="1592412560178" />
+    <state x="695" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1866.933@0.0.1866.933" timestamp="1593103416991" />
     <state x="726" y="179" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592413126351">
       <screen x="0" y="0" width="1866" height="933" />
     </state>

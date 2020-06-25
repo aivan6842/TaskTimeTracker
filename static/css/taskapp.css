@@ -19,3 +19,7 @@ td{
 form{
     display: inline;
 }
+
+.started{
+    background-color: #cffcda
+}

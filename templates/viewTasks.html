@@ -17,14 +17,18 @@
         </thead>
           {% for task in userTasks %}
           <tbody>
-            <tr class="table-default">
+          {% if task.currentlyWorking %}
+          <tr class="table-default started">
+                {% else %}
+                <tr class="table-default">
+                {% endif %}
                    <td >{{ task.taskName }}</td>
                    <td >{{ task.description }}</td>
                    <td >{{ task.totaltime }}</td>
                    <td id="table-buttons">
                       {% if not task.currentlyWorking %}
                       <form  method="post"> {% csrf_token %}
-                         <button type="submit" class="btn btn-success pull-left" name="{{task.taskName}}Start" formmethod='post' value='True'>Start</button>
+                         <button id="start" type="submit" class="btn btn-success pull-left" name="{{task.taskName}}Start" formmethod='post' value='True'>Start</button>
                       </form>
                       {% else %}
                       <form  method="post"> {% csrf_token %}
@@ -49,4 +53,6 @@
     </form>
 </div>
 
-    {% endblock %}
+<script src="{% static 'js/viewTasks.js' %}"></script>
+
+{% endblock %}
