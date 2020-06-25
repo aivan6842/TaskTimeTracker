@@ -2,53 +2,53 @@
 {% block content %}
 {% load static %}
 
-<h1 style='text-align:center'>Your Tasks</h1>
-
+<link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
 {% if userTasks %}
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col" style='text-align:center'>Task Name</th>
-        <th scope="col" style='text-align:center'>Task Description</th>
-        <th scope="col" style='text-align:center'>Time Worked On</th>
-        <th scope="col" style='text-align:center'>Currently Working</th>
-        <th scope="col" style='text-align:center'></th>
-        <th scope="col" style='text-align:center'></th>
-      </tr>
-    </thead>
-      {% for task in userTasks %}
-         <tbody>
+<div class="container">
+    <h1 id="header">Your Tasks</h1>
+      <table class="table table-dark rounded">
+        <thead>
+          <tr>
+            <th scope="col">Task Name</th>
+            <th scope="col">Task Description</th>
+            <th scope="col">Time Worked On</th>
+            <th scope="col">Currently Working</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+          {% for task in userTasks %}      <tbody>
+
             <tr class="table-default">
-               <td style='text-align:center'>{{ task.taskName }}</td>
-               <td style='text-align:center'>{{ task.description }}</td>
-               <td style='text-align:center'>{{ task.totaltime }}</td>
-               <td style='text-align:center'>{{ task.currentlyWorking }}</td>
-               <td style='text-align:center'>
-                  {% if not task.currentlyWorking %}
-                  <form  method="post"> {% csrf_token %}
-                     <button type="submit" name="{{task.taskName}}Start" formmethod='post' value='True'>Start Working</button>
-                  </form>
-                  {% else %}
-                  <form  method="post"> {% csrf_token %}
-                     <button type="submit" name="{{task.taskName}}Stop" formmethod='post' value='True'>Stop Working</button>
-                  </form>
-                  {% endif %}
-               </td>
-               <td style='text-align:center'>
-                 <form method='post'> {% csrf_token %}
-                   <button type='submit' name='{{task.taskName}}Delete' formmethod="post" value=True>Delete Task</button>
-                 </form>
-               </td>
-            </tr>
-         </tbody>
-      {% endfor %}
-  {% else %}
-     <h2>No Tasks Yet</h2>
-  {% endif %}
-</table>
+                   <td >{{ task.taskName }}</td>
+                   <td >{{ task.description }}</td>
+                   <td >{{ task.totaltime }}</td>
+                   <td >{{ task.currentlyWorking }}</td>
+                   <td id="table-buttons">
+                      {% if not task.currentlyWorking %}
+                      <form  method="post"> {% csrf_token %}
+                         <button type="submit" class="btn btn-success" name="{{task.taskName}}Start" formmethod='post' value='True'>Start</button>
+                      </form>
+                      {% else %}
+                      <form  method="post"> {% csrf_token %}
+                         <button type="submit" class="btn btn-warning" name="{{task.taskName}}Stop" formmethod='post' value='True'>Stop</button>
+                      </form>
+                      {% endif %}
+                     <form method='post'> {% csrf_token %}
+                       <button type='submit' class="btn btn-danger" name='{{task.taskName}}Delete' formmethod="post" value=True>Delete</button>
+                     </form>
+                   </td>
+                </tr>
+             </tbody>
+          {% endfor %}
+      {% else %}
+         <h2>No Tasks Yet</h2>
+      {% endif %}
+    </table>
 
-<form  method="post"> {% csrf_token %}
-   <button type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
-</form>
+    <form  method="post"> {% csrf_token %}
+       <button class="btn btn-dark" type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
+    </form>
+</div>
 
-{% endblock %}
+    {% endblock %}

@@ -19,7 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="Sign up html" />
+    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="Sign up html">
+      <change afterPath="$PROJECT_DIR$/.idea/TaskTimeTracker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM_[Default_Changelist]/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_17_2020_12_49_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_17_2020_12_49_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/taskapp.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/taskapp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewTasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewTasks.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -58,12 +74,30 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TaskTimeTracker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.runserver" />
       </list>
     </recent_temporary>
   </component>
@@ -115,6 +149,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added front end sign in page got rid of home page" />
@@ -122,10 +157,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Sign up html" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="360" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592396152853">
+    <state x="449" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593092667294">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state x="360" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1866.933@0.0.1866.933" timestamp="1592396152853" />
+    <state x="449" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1866.933@0.0.1866.933" timestamp="1593092667294" />
     <state x="685" y="192" key="FileChooserDialogImpl" timestamp="1592397275801">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
@@ -134,22 +169,22 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="621" y="309" key="Github.CreatePullRequestDialog/0.0.1866.933@0.0.1866.933" timestamp="1592400670667" />
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1592413020361">
+    <state width="1427" height="230" key="GridCell.Tab.0.bottom" timestamp="1593096127563">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1592413020361" />
-    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1592413020361">
+    <state width="1427" height="230" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
+    <state width="1427" height="230" key="GridCell.Tab.0.center" timestamp="1593096127563">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1592413020361" />
-    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1592413020361">
+    <state width="1427" height="230" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
+    <state width="1427" height="230" key="GridCell.Tab.0.left" timestamp="1593096127563">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1592413020361" />
-    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1592413020361">
+    <state width="1427" height="230" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
+    <state width="1427" height="230" key="GridCell.Tab.0.right" timestamp="1593096127563">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1592413020361" />
+    <state width="1427" height="230" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
     <state width="1451" height="285" key="GridCell.Tab.1.bottom" timestamp="1592404851141">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
@@ -174,10 +209,10 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="908" y="331" width="624" height="265" key="MultipleFileMergeDialog/0.0.1866.933@0.0.1866.933" timestamp="1592413306350" />
-    <state x="407" y="95" key="SettingsEditor" timestamp="1592396137058">
+    <state x="407" y="95" key="SettingsEditor" timestamp="1593092603053">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state x="407" y="95" key="SettingsEditor/0.0.1866.933@0.0.1866.933" timestamp="1592396137058" />
+    <state x="407" y="95" key="SettingsEditor/0.0.1866.933@0.0.1866.933" timestamp="1593092603053" />
     <state x="456" y="110" width="1234" height="692" key="ShowDiffWithBranchDialog" timestamp="1592413422854">
       <screen x="0" y="0" width="1866" height="933" />
     </state>

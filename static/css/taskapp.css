@@ -1,7 +1,17 @@
-h1{
+.invalidUser{
     color: red;
 }
 
-.invalidUser{
-    color: red;
+th{
+    text-align: center;
+    scope: col;
+}
+
+td{
+    text-align: center;
+}
+
+#header{
+    text-align: center;
+    margin-top: 5%;
 }
