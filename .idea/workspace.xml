@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="Sign up html">
-      <change afterPath="$PROJECT_DIR$/.idea/TaskTimeTracker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM_[Default_Changelist]/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_17_2020_12_50_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_17_2020_12_49_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_17_2020_12_49_PM__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="Added css to viewTasks.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/taskapp.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/taskapp.css" afterDir="false" />
@@ -133,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592413094871</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added css to viewTasks.html">
+      <created>1593097022761</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593097022761</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -154,7 +151,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added front end sign in page got rid of home page" />
     <MESSAGE value="Sign up html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign up html" />
+    <MESSAGE value="Added css to viewTasks.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added css to viewTasks.html" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593092667294">
@@ -169,22 +167,22 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="621" y="309" key="Github.CreatePullRequestDialog/0.0.1866.933@0.0.1866.933" timestamp="1592400670667" />
-    <state width="1427" height="230" key="GridCell.Tab.0.bottom" timestamp="1593096127563">
+    <state width="1845" height="152" key="GridCell.Tab.0.bottom" timestamp="1593097197787">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1427" height="230" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
-    <state width="1427" height="230" key="GridCell.Tab.0.center" timestamp="1593096127563">
+    <state width="1845" height="152" key="GridCell.Tab.0.bottom/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
+    <state width="1845" height="152" key="GridCell.Tab.0.center" timestamp="1593097197787">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1427" height="230" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
-    <state width="1427" height="230" key="GridCell.Tab.0.left" timestamp="1593096127563">
+    <state width="1845" height="152" key="GridCell.Tab.0.center/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
+    <state width="1845" height="152" key="GridCell.Tab.0.left" timestamp="1593097197787">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1427" height="230" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
-    <state width="1427" height="230" key="GridCell.Tab.0.right" timestamp="1593096127563">
+    <state width="1845" height="152" key="GridCell.Tab.0.left/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
+    <state width="1845" height="152" key="GridCell.Tab.0.right" timestamp="1593097197787">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state width="1427" height="230" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1593096127563" />
+    <state width="1845" height="152" key="GridCell.Tab.0.right/0.0.1866.933@0.0.1866.933" timestamp="1593097197787" />
     <state width="1451" height="285" key="GridCell.Tab.1.bottom" timestamp="1592404851141">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
@@ -221,10 +219,10 @@
       <screen x="0" y="0" width="1866" height="933" />
     </state>
     <state x="714" y="183" key="VCS.ChangeListViewerDialog/0.0.1866.933@0.0.1866.933" timestamp="1592412569498" />
-    <state x="340" y="183" key="Vcs.Push.Dialog.v2" timestamp="1592413101403">
+    <state x="340" y="183" key="Vcs.Push.Dialog.v2" timestamp="1593097029123">
       <screen x="0" y="0" width="1866" height="933" />
     </state>
-    <state x="340" y="183" key="Vcs.Push.Dialog.v2/0.0.1866.933@0.0.1866.933" timestamp="1592413101403" />
+    <state x="340" y="183" key="Vcs.Push.Dialog.v2/0.0.1866.933@0.0.1866.933" timestamp="1593097029123" />
     <state x="695" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592412560178">
       <screen x="0" y="0" width="1866" height="933" />
     </state>

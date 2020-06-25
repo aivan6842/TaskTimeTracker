@@ -6,36 +6,33 @@
 {% if userTasks %}
 <div class="container">
     <h1 id="header">Your Tasks</h1>
-      <table class="table table-dark rounded">
+      <table class="table rounded">
         <thead>
           <tr>
             <th scope="col">Task Name</th>
             <th scope="col">Task Description</th>
             <th scope="col">Time Worked On</th>
-            <th scope="col">Currently Working</th>
-            <th scope="col"></th>
             <th scope="col"></th>
           </tr>
         </thead>
-          {% for task in userTasks %}      <tbody>
-
+          {% for task in userTasks %}
+          <tbody>
             <tr class="table-default">
                    <td >{{ task.taskName }}</td>
                    <td >{{ task.description }}</td>
                    <td >{{ task.totaltime }}</td>
-                   <td >{{ task.currentlyWorking }}</td>
                    <td id="table-buttons">
                       {% if not task.currentlyWorking %}
                       <form  method="post"> {% csrf_token %}
-                         <button type="submit" class="btn btn-success" name="{{task.taskName}}Start" formmethod='post' value='True'>Start</button>
+                         <button type="submit" class="btn btn-success pull-left" name="{{task.taskName}}Start" formmethod='post' value='True'>Start</button>
                       </form>
                       {% else %}
                       <form  method="post"> {% csrf_token %}
-                         <button type="submit" class="btn btn-warning" name="{{task.taskName}}Stop" formmethod='post' value='True'>Stop</button>
+                         <button type="submit" class="btn btn-warning pull-right" name="{{task.taskName}}Stop" formmethod='post' value='True'>Stop</button>
                       </form>
                       {% endif %}
                      <form method='post'> {% csrf_token %}
-                       <button type='submit' class="btn btn-danger" name='{{task.taskName}}Delete' formmethod="post" value=True>Delete</button>
+                       <button type='submit' class="btn btn-danger pull-right" name='{{task.taskName}}Delete' formmethod="post" value=True>Delete</button>
                      </form>
                    </td>
                 </tr>
