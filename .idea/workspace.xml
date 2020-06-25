@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="changed color wqhen ssrtarter ,adfnsdkfhtwltgwe, gf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/viewTasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewTasks.html" afterDir="false" />
-    </list>
+    <list default="true" id="4b8c9100-e748-46cb-ab0a-5d38182e3a1d" name="Default Changelist" comment="changed color wqhen ssrtarter ,adfnsdkfhtwltgwe, gf" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593106673812</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changed color wqhen ssrtarter ,adfnsdkfhtwltgwe, gf">
+      <created>1593109924007</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593109924007</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
