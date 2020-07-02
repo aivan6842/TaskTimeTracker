@@ -1,10 +1,63 @@
 from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
-from .forms import UserForm, TaskForm
-from .models import User, Task
+from .forms import UserForm, TaskForm, ImageForm
+from .models import User, Task, TrainImage
 from django.utils import timezone
 
+from django.http import StreamingHttpResponse
+from .Camera import VideoCamera, face_capture
+import io
+from PIL import Image
+
+import cv2
+import os
+import face_recognition
+
 # Create your views here.
+def getTrainingData(request, id):
+    if request.method == 'POST':
+        if request.POST.get('noID'):
+            return redirect(f'/viewTasks/{id}/')
+        userRef = User.objects.get(id=id)
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            for item in request.FILES.getlist('image'):
+                TrainImage.objects.create(userReference=userRef, image=item)
+            return redirect(f'/viewTasks/{id}/')
+
+    return render(request, 'uploadImages.html')
+
+def match(request):
+    cam = VideoCamera()
+    all = TrainImage.objects.all()
+    TOLERANCE = 0.6
+    FRAME_THICKNESS = 3
+    FONT_THICKNESS = 2
+    MODEL = "hog"
+
+    known_faces = []
+    known_names = []
+
+    print('loading known faces')
+
+    for pic in all:
+        image = face_recognition.load_image_file(pic.image)
+        encoding = face_recognition.face_encodings(image)[0]
+        known_faces.append(encoding)
+        known_names.append(pic.userReference)
+
+    while True:
+        ret, image = cam.video.read()
+
+        locations = face_recognition.face_locations(image, model=MODEL)
+        encodings = face_recognition.face_encodings(image, locations)
+
+        for face_encoding, face_location in zip(encodings, locations):
+            results = face_recognition.compare_faces(known_faces, face_encoding, TOLERANCE)
+            match = None
+            if True in results:
+                match = known_names[results.index(True)]
+                return redirect(f'/viewTasks/{match.id}/')
 
 def home(request):
     return redirect('/signIn/')
@@ -13,6 +66,8 @@ def signIn(request):
     if request.method == 'POST':
         if request.POST.get('signUp'):
             return redirect('/signUp/')
+        elif request.POST.get('signInFaceID'):
+            return redirect('/match/')
 
         username = request.POST['username']
         password = request.POST['password']
@@ -40,7 +95,7 @@ def signUp(request):
             if form.is_valid():
                 form.save()
                 currUser = User.objects.get(username=request.POST['username'], password=request.POST['password'])
-                return redirect(f'/viewTasks/{currUser.id}/')
+                return redirect(f'/train/{currUser.id}/')
 
         return render(request, 'signUp.html', {'BadUser':True})
     else:

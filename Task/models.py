@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+
 # Create your models here.
 
 class User(models.Model):
@@ -12,4 +13,8 @@ class Task(models.Model):
     currentlyWorking = models.BooleanField(default=False)
     totaltime = models.DurationField(default=timezone.timedelta)
     startedAt = models.DateTimeField(auto_now_add=True)
+    userReference = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
+
+class TrainImage(models.Model):
+    image = models.ImageField()
     userReference = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
