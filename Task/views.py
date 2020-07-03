@@ -6,6 +6,8 @@ from django.utils import timezone
 from .Camera import VideoCamera, face_capture
 import cv2
 import face_recognition
+import pickle
+import base64
 
 # Create your views here.
 def getTrainingData(request, id):
@@ -16,7 +18,11 @@ def getTrainingData(request, id):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             for item in request.FILES.getlist('image'):
-                TrainImage.objects.create(userReference=userRef, image=item)
+                image = face_recognition.load_image_file(item)
+                encoding = face_recognition.face_encodings(image)[0]
+                pckl = pickle.dumps(encoding)
+                b64Encoding = base64.b64encode(pckl)
+                TrainImage.objects.create(userReference=userRef, image=item, encoding=b64Encoding)
             return redirect(f'/viewTasks/{id}/')
 
     return render(request, 'uploadImages.html')
@@ -33,10 +39,12 @@ def match(request):
     print('loading known faces')
 
     for pic in all:
-        image = face_recognition.load_image_file(pic.image)
-        encoding = face_recognition.face_encodings(image)[0]
-        known_faces.append(encoding)
+        b64 = base64.b64decode(pic.encoding)
+        pckl = pickle.loads(b64)
+        known_faces.append(pckl)
         known_names.append(pic.userReference)
+
+    print('DOne')
 
     while True:
         ret, image = cam.video.read()
