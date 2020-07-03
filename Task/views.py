@@ -18,14 +18,19 @@ def getTrainingData(request, id):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             for item in request.FILES.getlist('image'):
-                image = face_recognition.load_image_file(item)
-                encoding = face_recognition.face_encodings(image)[0]
-                pckl = pickle.dumps(encoding)
-                b64Encoding = base64.b64encode(pckl)
-                TrainImage.objects.create(userReference=userRef, image=item, encoding=b64Encoding)
+                try:
+                    image = face_recognition.load_image_file(item)
+                    encoding = face_recognition.face_encodings(image)[0]
+                    pckl = pickle.dumps(encoding)
+                    b64Encoding = base64.b64encode(pckl)
+                    TrainImage.objects.create(userReference=userRef, image=item, encoding=b64Encoding)
+                except Exception:
+                    allUploadedImages = TrainImage.objects.filter(userReference__id=id)
+                    allUploadedImages.delete()
+                    return render(request, 'uploadImages.html', {'badImage': True})
             return redirect(f'/viewTasks/{id}/')
 
-    return render(request, 'uploadImages.html')
+    return render(request, 'uploadImages.html', {'badImage': False})
 
 def match(request):
     cam = VideoCamera()

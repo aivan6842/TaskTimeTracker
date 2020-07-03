@@ -2,6 +2,9 @@
 {% block content %}
 
 <form method='post' enctype="multipart/form-data"> {% csrf_token %}
+   {% if badImage %}
+      <p class="invalidUser">User not recognized</p>
+   {% endif %}
   <label for="img">Select image:</label>
   <input type="file" id="img" name="image" accept="image/*" multiple>
   <input type="submit">
