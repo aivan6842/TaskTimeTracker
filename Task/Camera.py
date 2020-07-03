@@ -1,6 +1,4 @@
 import cv2
-import io
-from PIL import Image
 
 class VideoCamera(object):
     def __init__(self):
