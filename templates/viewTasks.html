@@ -3,9 +3,8 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
-{% if userTasks %}
 <div class="container">
-    <h1 id="header">Your Tasks</h1>
+   <h1 id="header">Your Tasks</h1>
       <table class="table rounded">
         <thead>
           <tr>
@@ -15,6 +14,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
+        {% if userTasks %}
           {% for task in userTasks %}
           <tbody>
           {% if task.currentlyWorking %}
@@ -42,16 +42,16 @@
                 </tr>
              </tbody>
           {% endfor %}
-      {% else %}
-         <h2>No Tasks Yet</h2>
       {% endif %}
     </table>
 
     <form  method="post"> {% csrf_token %}
-       <button class="btn btn-dark" type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
-	   <button class="btn btn-info btn-xs" type="submit" name="signOut" formmethod='post' value='True'>
-          <span class="glyphicon glyphicon-trash"></span> Log out
+      <div class="bottom-buttons">
+         <button class="btn btn-dark bottom-buttons" type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
+         <button class="btn btn-info btn-xs bottom-buttons" type="submit" name="signOut" formmethod='post' value='True'>
+         <span class="glyphicon glyphicon-trash"></span> Log out
        </button>
+      </div>
     </form>
 </div>
 
