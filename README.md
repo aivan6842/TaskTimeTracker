@@ -1,5 +1,5 @@
 # TaskTimeTracker
-This is an web application which is used to track your productivity based on the amount of time you have devoted to a specific task. The application lets users create their own accounts and add tasks that should be completed or are currently being worked on. Users are allowed to start working on multiple tasks at once and record the amount of time that they have spent on a specific activity. The application supports FaceID login and regular password and username logins.
+This is an web application which is used to track your productivity based on the amount of time you have devoted to a specific task. The application lets users create their own accounts and add tasks that should be completed or are currently being worked on. Users are allowed to start working on multiple tasks at once and record the amount of time that they have spent on a specific activity. The application supports FaceID login and regular password and username logins. In order to login with FaceID ensure that you have a working web camera.
 
 ## Getting Started
 To ensure that the program runs properly please ensure that you follow the steps for installing the dependencies
