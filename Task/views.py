@@ -3,14 +3,8 @@ from django.http.response import HttpResponse
 from .forms import UserForm, TaskForm, ImageForm
 from .models import User, Task, TrainImage
 from django.utils import timezone
-
-from django.http import StreamingHttpResponse
 from .Camera import VideoCamera, face_capture
-import io
-from PIL import Image
-
 import cv2
-import os
 import face_recognition
 
 # Create your views here.
@@ -31,8 +25,6 @@ def match(request):
     cam = VideoCamera()
     all = TrainImage.objects.all()
     TOLERANCE = 0.6
-    FRAME_THICKNESS = 3
-    FONT_THICKNESS = 2
     MODEL = "hog"
 
     known_faces = []
