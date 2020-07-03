@@ -103,13 +103,16 @@ def signUp(request):
 
 def viewTasks(request, id):
     allTasks = Task.objects.filter(userReference__id=id)
+    hasFaceID = TrainImage.objects.filter(userReference__id=id).exists()
     if request.method == 'GET':
-        return render(request, 'viewTasks.html', {'userTasks': allTasks })
+        return render(request, 'viewTasks.html', {'userTasks': allTasks, 'hasFaceID': hasFaceID })
     else:
         if request.POST.get('createTask'):
             return redirect(f'/createTask/{id}/')
         elif request.POST.get('signOut'):
             return redirect(f'/signIn/')
+        elif request.POST.get('addFaceID'):
+            return redirect(f'/train/{id}/')
         else:
             for task in allTasks:
                 if request.POST.get(f'{task.taskName}Start'):
@@ -128,7 +131,7 @@ def viewTasks(request, id):
                     currTask = Task.objects.get(id=task.id)
                     currTask.delete()
             allTasks = Task.objects.filter(userReference__id=id)
-            return render(request, 'viewTasks.html', {'userTasks': allTasks})
+            return render(request, 'viewTasks.html', {'userTasks': allTasks, 'hasFaceID': hasFaceID })
 
 def createTask(request, id):
     if request.method == 'GET':
