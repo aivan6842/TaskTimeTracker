@@ -3,9 +3,8 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
-{% if userTasks %}
 <div class="container">
-    <h1 id="header">Your Tasks</h1>
+   <h1 id="header">Your Tasks</h1>
       <table class="table rounded">
         <thead>
           <tr>
@@ -15,6 +14,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
+        {% if userTasks %}
           {% for task in userTasks %}
           <tbody>
           {% if task.currentlyWorking %}
@@ -42,8 +42,6 @@
                 </tr>
              </tbody>
           {% endfor %}
-      {% else %}
-         <h2>No Tasks Yet</h2>
       {% endif %}
     </table>
 

@@ -15,12 +15,11 @@
             <label>Description</label>
             <textarea rows={2} name="description" required></textarea>
          </div>
-
-            {% if BadTaskName %}
-               <p style="color:red">This task already exists!</p><br>
-            {% endif %}
             
          <button type="submit" class="btn btn-info btn-xs" formmethod="post">Create</button>
+         {% if BadTaskName %}
+            <h4>That tasks already exists!</h2>
+         {% endif %}
       </form>
    </div>
 {% endblock content %}
