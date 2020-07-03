@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-<h1>Create Tasks</h1>
 
+<link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
+   <div class="ui main text container segment center">
+      <div class="huge header">New Task</div>
+      <form method="POST" class="ui form">
+      {% csrf_token %}
+         <div class="field">
+            <label>Title</label>
+            <input type="text" name="taskName" required>
+         <div class="field">
+            <label>Description</label>
+            <textarea rows={2} name="description" required></textarea>
+         </div>
 
-<form  method="post"> {% csrf_token %}
-   <label for="taskName"><b>Task Name</b></label>
-   <input type="text" placeholder="Enter Task Name" name="taskName" required>
+            {% if BadTaskName %}
+               <p style="color:red">This task already exists!</p><br>
+            {% endif %}
+            
+         <button type="submit" class="btn btn-info btn-xs" formmethod="post">Create</button>
+      </form>
+   </div>
+{% endblock content %}
 
-   <br><br>
-
-   <label for="description"><b>Description</b></label>
-   <textarea name="description" placeholder="Description" required></textarea>
-
-   <br><br>
-
-   {% if BadTaskName %}
-      <p style="color:red">This task already exists!</p><br>
-   {% endif %}
-
-   <button type="submit" formmethod="post">Create New Task</button>
-</form>
-
-{% endblock %}

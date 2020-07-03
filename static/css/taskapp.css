@@ -4,7 +4,6 @@
 
 th{
     text-align: center;
-    scope: col;
 }
 
 td{
@@ -22,4 +21,20 @@ form{
 
 .started{
     background-color: #cffcda
+}
+
+.container.main{
+  margin-top: 7em;
+}
+
+.huge{
+    padding-bottom: 10px;
+}
+
+.bottom-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }

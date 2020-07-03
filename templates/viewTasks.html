@@ -48,10 +48,12 @@
     </table>
 
     <form  method="post"> {% csrf_token %}
-       <button class="btn btn-dark" type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
-	   <button class="btn btn-info btn-xs" type="submit" name="signOut" formmethod='post' value='True'>
-          <span class="glyphicon glyphicon-trash"></span> Log out
+      <div class="bottom-buttons">
+         <button class="btn btn-dark bottom-buttons" type="submit" name="createTask" formmethod='post' value='True'>Create Task</button>
+         <button class="btn btn-info btn-xs bottom-buttons" type="submit" name="signOut" formmethod='post' value='True'>
+         <span class="glyphicon glyphicon-trash"></span> Log out
        </button>
+      </div>
     </form>
 </div>
 
