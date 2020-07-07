@@ -18,3 +18,4 @@ class Task(models.Model):
 class TrainImage(models.Model):
     image = models.ImageField()
     userReference = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
+    encoding = models.BinaryField(default=None)

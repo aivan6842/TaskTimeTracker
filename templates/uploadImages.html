@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="{% static 'css/taskapp.css' %}">
 
 <div class="ui main text container segment center">
@@ -22,5 +23,17 @@
   </form>
   
 </div>
+=======
+<form method='post' enctype="multipart/form-data"> {% csrf_token %}
+   {% if badImage %}
+      <p class="invalidUser">User not recognized</p>
+   {% endif %}
+  <label for="img">Select image:</label>
+  <input type="file" id="img" name="image" accept="image/*" multiple>
+  <input type="submit">
+  <button type='submit' name='noID'
+                 class="btn btn-primary" id="signUp" value="true">Dont Set up Face ID</button>
+</form>
+>>>>>>> ea87c042fc9c739f5c33ccaec5330dda1fe069de
 
 {% endblock %}
